@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+category_list = [
+  "sweet",
+  "savory",
+  "high fat",
+  "high carb",
+  "high protein",
+  "alcohol"
+]
+
+category_list.each do |name|
+  Category.create(name: name)
+end
+
+type_list = [
+  "meal",
+  "snack",
+  "drink"
+]
+
+type_list.each do |name|
+  Type.create(name: name)
+end
