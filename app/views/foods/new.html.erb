@@ -1,0 +1,30 @@
+<div class="row clearfix">
+  <div class="col-sm-12 form_for_foods">
+    <%= form_for @food do |f| %>
+      <div class="form-group">
+        <%= f.label "Category" %>
+        <%= f.select("category_id", {:class => "category-select"}) do %>
+          <% @categories.each do |category| %>
+            <%= content_tag(:option, category.name, value: category.id) %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Meal Type" %>
+        <%= f.select("type_id", {:class => "type-select"}) do %>
+          <% @types.each do |type| %>
+            <%= content_tag(:option, type.name, value: type.id) %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Time Consumed" %>
+        <%= f.datetime_select :time_consumed, prompt: true %>
+      </div>
+
+      <%= f.submit :class => "btn btn-default" %>
+    <% end %>
+  </div>
+</div>

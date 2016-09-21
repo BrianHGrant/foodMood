@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :user_name, :presence => true
   validates :date_of_birth, :presence => true
 
+  has_many :foods
 end
