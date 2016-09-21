@@ -29,8 +29,8 @@ type_list.each do |name|
   Type.create(name: name)
 end
 
-40.times do
-  Mood.create(level: rand(1..10), user_id: 1, time:FFaker::Time.date)
+100.times do
+  Mood.create(level: rand(1..10), user_id: 1, time:FFaker::Time.between(30.days.ago, Time.now))
 end
 
 10.times do
@@ -38,18 +38,6 @@ end
 end
 
 
-10.times do
-  Food.create(user_id: 1, category_id: 1, type_id: 2, time_consumed:FFaker::Time.date)
-end
-
-10.times do
-  Food.create(user_id: 1, category_id: 2, type_id: 1, time_consumed:FFaker::Time.date)
-end
-
-10.times do
-  Food.create(user_id: 1, category_id: 3, type_id: 1, time_consumed:FFaker::Time.date)
-end
-
-10.times do
-  Food.create(user_id: 1, category_id: 4, type_id: 2, time_consumed:FFaker::Time.date)
+100.times do
+  Food.create(user_id: 1, category_id: rand(1..6), type_id: rand(1..3), time_consumed:FFaker::Time.between(30.days.ago, Time.now))
 end
