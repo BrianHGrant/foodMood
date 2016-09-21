@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'chartkick', '~> 2.1', '>= 2.1.1'
+gem 'groupdate', '~> 3.0', '>= 3.0.2'
 
 
 group :development, :test do

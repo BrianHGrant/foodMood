@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :date_of_birth, :presence => true
 
   has_many :foods
+  has_many :moods
 end

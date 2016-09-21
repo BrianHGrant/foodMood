@@ -20,7 +20,7 @@ def create
   @food = current_user.foods.new(food_params)
   if @food.save
     flash[:notice] = "Food saved successfully"
-    redirect_to foods_path
+    redirect_to new_mood_path
   else
     flash[:alert] = "Food failed to save"
     render :new
