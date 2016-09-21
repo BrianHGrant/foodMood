@@ -34,6 +34,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'chartkick', '~> 2.1', '>= 2.1.1'
 gem 'groupdate', '~> 3.0', '>= 3.0.2'
+gem 'ffaker'
 
 
 group :development, :test do
