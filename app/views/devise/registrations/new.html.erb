@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -19,6 +24,19 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_field :date_of_birth %>
+  </div>
+
+  <div class="field">
+    <%= f.select :gender, {:class => 'gender-select'} do %>
+      <%= content_tag(:option, 'Male', value: 'male') %>
+      <%= content_tag(:option, 'Female', value: 'female') %>
+      <%= content_tag(:option, 'Non-binary', value: 'non-binary') %>
+    <% end %>
   </div>
 
   <div class="actions">
