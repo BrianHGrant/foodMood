@@ -16,7 +16,7 @@ class MoodsController < ApplicationController
     @mood = current_user.moods.new(mood_params)
     if @mood.save
       flash[:notice] = "Mood saved successfully"
-      redirect_to new_mood_path
+      redirect_to root_path
     else
       flash[:alert] = "Mood failed to save"
       render :new

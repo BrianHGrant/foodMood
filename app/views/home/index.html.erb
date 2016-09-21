@@ -1,1 +1,8 @@
-Hi!
+<h3>Foods</h3>
+<%= line_chart Food.group(:category_id).group_by_day(:time_consumed, last: 30).count %>
+
+<h3>Moods</h3>
+<%= line_chart Mood.group_by_day(:time, last: 30).minimum(:level) %>
+
+<h3>Foods barchart</h3>
+<%= bar_chart Food.group(:category_id).group_by_day(:time_consumed, last: 30).count %>
