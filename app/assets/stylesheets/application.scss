@@ -1,2 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+th {
+  a:hover {
+    text-decoration: none;
+  }
+  .asc:after {
+    margin-left: 3px;
+    content:"\e113";
+    font-family:"Glyphicons Halflings";
+  }
+
+  .desc:after {
+    margin-left: 3px;
+    content:"\e114";
+    font-family:"Glyphicons Halflings";
+  }
+}
