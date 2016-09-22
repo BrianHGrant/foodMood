@@ -5,11 +5,10 @@ class FoodsController < ApplicationController
 
   def index
     # @foods = Food.search(params[:search])
-    if params[:search]
-      @category = Category.search(params[:search]).first
-      @foods = Food.where(category_id: @category.id)
+    if @category = Category.search(params[:search]).first
+      @foods = Food.where(category_id: @category.id).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
     else
-      @foods = Food.order(sort_column + " " + sort_direction)
+      @foods = Food.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
     end
     # @foods = Food.order(sort_column + " " + sort_direction)
   end
