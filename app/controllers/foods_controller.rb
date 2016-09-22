@@ -4,7 +4,14 @@ class FoodsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @foods = Food.order(sort_column + " " + sort_direction)
+    # @foods = Food.search(params[:search])
+    if params[:search]
+      @category = Category.search(params[:search]).first
+      @foods = Food.where(category_id: @category.id)
+    else
+      @foods = Food.order(sort_column + " " + sort_direction)
+    end
+    # @foods = Food.order(sort_column + " " + sort_direction)
   end
 
   def show
