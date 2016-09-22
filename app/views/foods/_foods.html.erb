@@ -1,0 +1,13 @@
+<table class="table table-striped">
+  <th><%= sortable "time_consumed" %></th>
+  <th><%= sortable "type_id", "Type of Meal" %></th>
+  <th><%= sortable "category_id", "Food Category" %></th>
+  <% @foods.each do |food| %>
+    <tr>
+      <td><%= food.time_consumed %></td>
+      <td><%= food.type.name.titleize %></td>
+      <td><%= food.category.name.titleize %></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @foods %>

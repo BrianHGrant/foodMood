@@ -17,3 +17,9 @@
 //= require_tree .
 //= require highcharts
 //= require chartkick
+$(document).ready(function(event){
+  $("#foods-display th a").on("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+});
